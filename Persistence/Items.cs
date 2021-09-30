@@ -20,17 +20,7 @@ namespace Persistence
         {
             return ItemId.GetHashCode();
         }
-        public class Categories
-        {
-            public int CategoryId { set; get; }
-            public string CategoryName { set; get; }
-        }
 
-         public class ItemDetails
-        {
-            public Items ItemId { set; get; }
-            public Categories CategoryId { set; get; }
-            
-        }
+        
     }
 }

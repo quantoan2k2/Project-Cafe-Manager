@@ -15,6 +15,7 @@ namespace DAL
     {
         private string query;
         private MySqlConnection connection = DbHelper.GetConnection();
+        
         public Items GetbyID(int itemId)
         {
             Items item = null;
@@ -47,7 +48,7 @@ namespace DAL
         {
             Items item = new Items();
             item.ItemId = reader.GetInt32("item_id");
-            item.ItemName = reader.GetString("shoe_name");
+            item.ItemName = reader.GetString("item_name");
             item.ItemPrice = reader.GetDouble("item_price");
             item.ItemSize = reader.GetString("item_size");
             item.ItemDescription = reader.GetString("item_description");

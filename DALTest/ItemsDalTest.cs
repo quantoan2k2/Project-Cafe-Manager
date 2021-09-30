@@ -6,7 +6,7 @@ using Persistence;
 
 namespace DALTest
 {
-    public class ItemsDALTest
+    public class ItemsDalTest
     {
         private ItemsDal idal = new ItemsDal();
         private Items item = new Items();
@@ -15,7 +15,7 @@ namespace DALTest
         private const int FILTER_BY_ITEM_NAME = 1;
         
         [Theory]
-        [InlineData(3)]
+        [InlineData(1)]
 
         public void GetbyIDTest(int itemId)
         {
@@ -25,11 +25,5 @@ namespace DALTest
             
         }
 
-
-        public void GetbyNameTest(string itemName)
-        {
-            Items item1 = new Items() { ItemName = itemName };
-            
-        }
     }
 }

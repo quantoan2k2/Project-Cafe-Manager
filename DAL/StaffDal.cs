@@ -29,12 +29,12 @@ namespace DAL
                     {
                         staff.Role = 0;
                     }
-                    string name = reader["staff_name"].ToString();
-                    Console.WriteLine("\n\t\t\t...Wellcome to System "+name+"...\n");
+
                     reader.Close();
                 }
-                catch
+                catch(Exception ex)
                 {
+                    Console.WriteLine(ex);
                     staff.Role = -1;
                 }
                 finally

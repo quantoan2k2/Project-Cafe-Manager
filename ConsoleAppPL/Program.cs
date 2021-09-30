@@ -21,14 +21,13 @@ namespace ConsoleAppPL
                 {
                     Console.WriteLine("+──────────────────────────────────────────────────────────────────────────────────+");
                     Console.WriteLine("|                               ...LOGIN TO SYSTEM...                              |");
-                    Console.WriteLine("|                                    CAFE  STORE                                   |");
-                    Console.WriteLine("|──────────────────────────────────────────────────────────────────────────────────|");
-                    Console.Write("| User Name: ");
+                    Console.WriteLine("|                                                                                  |");
+                    Console.WriteLine("+──────────────────────────────────────────────────────────────────────────────────+");
+                    Console.Write(" User Name: ");
                     userName = Console.ReadLine();
-                    Console.WriteLine("────────────────────────────────────────────────────────────────────────────────────");
-                    Console.Write("| Password: ");
+                    Console.Write(" Password: ");
                     pass = GetPassword();
-                    Console.WriteLine("\n────────────────────────────────────────────────────────────────────────────────────");
+                    Console.WriteLine();
                     if (pass.Length < 8)
                     {
                         Console.WriteLine("Password must be 8 characters or more");
@@ -51,7 +50,7 @@ namespace ConsoleAppPL
             while (true)
             {
                 Console.WriteLine("┌──────────────────────────────────────────────────────────────────────────────────┐");
-                Console.WriteLine("|                         Cafes Store System - Menu                                |");
+                Console.WriteLine("|                                              Menu                                |");
                 Console.WriteLine("|──────────────────────────────────────────────────────────────────────────────────|");
                 Console.WriteLine("| 1.Search                                                                         |");
                 Console.WriteLine("| 2.Invoices                                                                       |");
@@ -59,7 +58,7 @@ namespace ConsoleAppPL
                 Console.WriteLine("└──────────────────────────────────────────────────────────────────────────────────┘");
                 Console.Write(" * Enter choice: ");
                 int choice = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("+──────────────────────────────────────────────────────────────────────────────────+");
+                Console.WriteLine("====================================================================================");
                 switch (choice)
                 {
                     case 1:
@@ -67,16 +66,16 @@ namespace ConsoleAppPL
                         do
                         {
                             Console.WriteLine("┌──────────────────────────────────────────────────────────────────────────────────┐");
-                            Console.WriteLine("|                     Cafes Store System - Search                                  |");
+                            Console.WriteLine("|                                          Search                                  |");
                             Console.WriteLine("|──────────────────────────────────────────────────────────────────────────────────|");
                             Console.WriteLine("| 1.Search name                                                                    |");
                             Console.WriteLine("| 2.Search id                                                                      |");
-                            Console.WriteLine("| 4.Show all shoes                                                                 |");
-                            Console.WriteLine("| 5.Exits Search                                                                   |");
+                            Console.WriteLine("| 3.Show all items                                                                 |");
+                            Console.WriteLine("| 4.Exits Search                                                                   |");
                             Console.WriteLine("└──────────────────────────────────────────────────────────────────────────────────┘");
-                            Console.Write(" * Input choice: ");
+                            Console.Write(" Input choice: ");
                             choi = Convert.ToInt32(Console.ReadLine());
-                            Console.WriteLine("+──────────────────────────────────────────────────────────────────────────────────+");
+                            Console.WriteLine("====================================================================================");
 
                             switch (choi)
                             {
@@ -84,18 +83,16 @@ namespace ConsoleAppPL
                                     string itemName;
                                     Console.Write("Input Search Name: ");
                                     itemName = Convert.ToString(Console.ReadLine());
-                                    Console.WriteLine("────────────────────────────────────────────────────────────────────────────────────");
                                     lst = ibl.SearchByName(itemName);
                                     if (lst == null)
                                     {
-                                        Console.WriteLine("────────────────────────────────────────────────────────────────────────────────────");
                                         Console.WriteLine("No results found for Name: " + itemName);
 
                                     }
                                     else
                                     {
                                         Console.WriteLine("\nNumber of results found By Name: " + lst.Count);
-                                        Console.WriteLine("────────────────────────────────────────────────────────────────────────────────────");
+                                        Console.WriteLine(".................................................");
                                     }
                                     Console.WriteLine("\n    Press Enter key to back Search Menu...");
                                     Console.ReadKey();
@@ -119,7 +116,7 @@ namespace ConsoleAppPL
                                         }
                                         else
                                         {
-                                            Console.WriteLine("────────────────────────────────────────────────────────────────────────────────────");
+                                            Console.WriteLine("====================================================================================");
                                             Console.WriteLine(" !!! No results found for id " + itemId);
                                         }
                                     }
@@ -133,6 +130,7 @@ namespace ConsoleAppPL
                                 
                                 case 3:
                                     lst = ibl.GetAll();
+                                    Console.WriteLine("\n    Press Enter key to back ...");
                                     Console.ReadKey();
                                     break;
                                 case 4:
@@ -146,7 +144,7 @@ namespace ConsoleAppPL
                         do
                         {
                             Console.WriteLine("┌──────────────────────────────────────────────────────────────────────────────────┐");
-                            Console.WriteLine("|                     Cafes Store System - Invoices                                |");
+                            Console.WriteLine("|                                          Invoices                                |");
                             Console.WriteLine("|──────────────────────────────────────────────────────────────────────────────────|");
                             Console.WriteLine("| 1. Create new invoice                                                            |");
                             Console.WriteLine("| 2. Invoices History                                                              |");
@@ -158,15 +156,15 @@ namespace ConsoleAppPL
                             {
                                 case 1:
                                     Console.WriteLine("┌──────────────────────────────────────────────────────────────────────────────────┐");
-                                    Console.WriteLine("|                     Cafes Store System - Invoices                                |");
+                                    Console.WriteLine("|                                          Invoices                                |");
                                     Console.WriteLine("|──────────────────────────────────────────────────────────────────────────────────|");
-                                    Console.Write("| Customer Name: ");
+                                    Console.Write(" Customer Name: ");
                                     break;
                                 case 2:
                                     Console.WriteLine("┌──────────────────────────────────────────────────────────────────────────────────┐");
-                                    Console.WriteLine("|                     Cafes Store System - Invoices                                |");
+                                    Console.WriteLine("|                                          Invoices                                |");
                                     Console.WriteLine("|──────────────────────────────────────────────────────────────────────────────────|");
-                                    Console.Write("| Customer Phone Number: ");
+                                    Console.Write(" Customer Phone Number: ");
                                     break;
                                 case 3:
                                     break;
@@ -182,7 +180,6 @@ namespace ConsoleAppPL
                         string o = Console.ReadLine();
                         if (o == "Y" || o == "y")
                         {
-                            Console.Write("GOOD BYE...");
                             Environment.Exit(0);
                         }
                         break;

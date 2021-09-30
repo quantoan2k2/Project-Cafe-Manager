@@ -11,7 +11,7 @@ namespace DALTest
         private Staff staff = new Staff();
 
         [Theory]
-        [InlineData("hongquan1", "Hongquan202")]
+        [InlineData("pf15", "PF15VTCAcademy")]
         
         public void LoginTest(string userName, string pass)
         {
